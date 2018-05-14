@@ -3,8 +3,8 @@
         {
             "type": "virtualbox-iso",
             "guest_os_type": "Fedora_64",
-            "iso_url": "https://ewr.edge.kernel.org/fedora-buffet/fedora/linux/releases/test/28_Beta/Workstation/x86_64/iso/Fedora-Workstation-netinst-x86_64-28_Beta-1.3.iso",
-            "iso_checksum": "52459ecd5205e4ec005beb813f5a1d499646995571b72e92399ad2dae26516f1",
+            "iso_url": "https://ewr.edge.kernel.org/fedora-buffet/fedora/linux/releases/28/Workstation/x86_64/iso/Fedora-Workstation-netinst-x86_64-28-1.1.iso",
+            "iso_checksum": "34da8b46b23d786bb1d43a77a4dcd713c446fc70a4ace0c6f52e43b086350562",
             "iso_checksum_type": "sha256",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
@@ -34,8 +34,7 @@
     "variables": {
         "cloud_token": "{{ env `ATLAS_TOKEN` }}",
         "vcloud_username": "rustic",
-        "vcloud_name": "fedora28beta",
-        "vagrantcloud_token": "{{env `VAGRANTCLOUD_TOKEN`}}",
+        "vcloud_name": "fedora28-minimal",
         "version": "1.0.{{timestamp}}"
       },
       "post-processors": [
@@ -47,9 +46,9 @@
           },
           {
             "type": "vagrant-cloud",
-            "box_tag": "rustic/fedora28beta",
+            "box_tag": "rustic/fedora28-minimal",
             "access_token": "{{user `cloud_token`}}",
-            "version_description": "This is a minimal install of Fedora 28 beta. Make sure you have the vbguest plugin installed with `vagrant plugin install vagrant-vbguest` From: [{{user `vcloud_username`}}/{{user `vcloud_name`}}](https://github.com/{{user `vcloud_username`}}/{{user `vcloud_name`}})",
+            "version_description": "This is a minimal install of Fedora 28. Make sure you have the vbguest plugin installed with `vagrant plugin install vagrant-vbguest` From: [{{user `vcloud_username`}}/{{user `vcloud_name`}}](https://github.com/{{user `vcloud_username`}}/{{user `vcloud_name`}})",
             "version": "{{user `version`}}"
           }
         ]
